@@ -1,0 +1,47 @@
+@import 'commonStyles/_colors.scss';
+
+.c-footer  {
+	height: 20vh;
+	border-top: 2px solid $highlight;
+	margin: 3rem 0;
+	padding: 1rem;
+	font-size: 1.4rem;
+}
+
+.c-footer_links {
+	height: 100%;
+	display: grid;
+	grid: repeat(4, 1fr) / 1fr;
+}
+
+.c-footer_link {
+	align-self: center;
+	justify-self: center;
+
+	
+
+	a {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.c-footer_graphic {
+	padding-left: .5rem;
+	width: 50px;
+
+	svg {
+	 	width: 100%;
+	 	height: 100%;
+	 	fill: $silver;
+	}
+}
+
+@media screen and (min-width: 550px) {
+	.c-footer {
+		width: 80%;
+		margin: 3rem auto;
+	}
+}
+
+

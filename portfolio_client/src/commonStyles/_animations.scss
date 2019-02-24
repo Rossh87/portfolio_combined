@@ -1,0 +1,85 @@
+@keyframes htmlBorder {
+
+	from {
+		border: 2px solid $silver;
+	}
+
+	25% {
+		border: 2px solid $silver;
+		border-top: 2px solid $highlight;
+	}
+
+	50% {
+		border: 2px solid $silver;
+		border-right: 2px solid $highlight;
+	}
+
+	75% {
+		border: 2px solid $silver;
+		border-bottom: 2px solid $highlight;
+	}
+
+	to {
+		border: 2px solid $silver;
+		border-left: 2px solid $highlight;
+	}
+}
+
+@keyframes reactBorder {
+	from {
+		border: 2px solid transparent;
+		
+	}
+
+	25% {
+		border: 2px solid transparent;
+		border-top: 2px solid $react-blue;
+	}
+
+	50% {
+		border: 2px solid transparent;
+		border-top: 2px solid $silver;
+		border-right: 2px solid $react-blue;
+	}
+
+	75% {
+		border: 2px solid transparent;
+		border-top: 2px solid $silver;
+		border-right: 2px solid $silver;
+		border-bottom: 2px solid $react-blue;
+	}
+
+	to {
+		border: 2px solid $silver;
+		border-left: 2px solid $react-blue;
+	}
+}
+
+@keyframes jsBorder {
+	from {
+		border: 2px solid transparent;
+	}
+
+	25% {
+		border: 2px solid transparent;
+		border-top: 2px solid $js-red;
+	}
+
+	50% {
+		border: 2px solid transparent;
+		border-top: 2px solid $silver;
+		border-right: 2px solid $js-red;
+	}
+
+	75% {
+		border: 2px solid transparent;
+		border-top: 2px solid $silver;
+		border-right: 2px solid $silver;
+		border-bottom: 2px solid $js-red;
+	}
+
+	to {
+		border: 2px solid $silver;
+		border-left: 2px solid $js-red;
+	}
+}

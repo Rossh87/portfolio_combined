@@ -1,0 +1,56 @@
+@import 'commonStyles/_colors.scss';
+
+.c-loadingGraphic {
+	width: 70%;
+	max-width: 250px;
+	margin: auto;
+	padding-top: 3rem;
+	text-align: center;
+	animation: bubbles 2s infinite;
+}
+
+.c-loadingGraphic_animation {
+	display: flex;
+	justify-content: space-around;
+}
+
+.c-loadingGraphic_text {
+	font-size: 1.5rem;
+	padding: 1rem;
+	color: $silver;
+}
+
+.c-loadingGraphic_bubble {
+	border: 10px solid $silver;
+	border-radius: 50%;
+	width: 5px;
+	height: 5px;
+	opacity: 1;
+}
+
+// Loop to add animation properties to circles
+$map: (
+	1: .1s,
+	2: .2s,
+	3: .3s,
+	4: .4s,
+	5: .5s,
+	6: .6s
+);
+
+@each $num, $delay in $map {
+	.bubble--#{$num} {
+		animation: blink .3s $delay alternate infinite;
+	}
+}
+
+// control the loading bubbles
+@keyframes blink {
+	from {
+		transform: none;
+	}
+
+	to {
+		transform: translateY(-20px);
+	}
+}

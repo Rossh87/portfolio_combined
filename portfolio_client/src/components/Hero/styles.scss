@@ -1,0 +1,94 @@
+@import 'commonStyles/_colors.scss';
+
+%hero--shared {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-left: .5rem;
+}
+.c-hero {
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 50;
+ 	border: 2rem solid $silver;
+	background-color: $silver;
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+	transform: translateY(-100vh);
+	display: flex;
+	transition: 0.5s transform;
+
+	&.s-is-open {
+		transform: translateY(0);
+	}
+}
+
+.c-hero--left {
+	@extend %hero--shared;
+	padding-top: 10vmin;
+	background-color: $dark;
+	color: $silver;
+	width: 100%;
+}
+
+
+.c-hero--right {
+	@extend %hero--shared;
+	position: absolute;
+	top: 40%;
+	left: 0;
+	right: 0;
+	color: $silver;
+	background-color: transparent;
+}
+
+.c-hero_banner {
+	line-height: 0.9em;
+	font-size: 2em;
+}
+
+// Media queries
+@media screen and (min-width: 495px) {
+	.c-hero {
+		font-size: 1.25rem;
+		letter-spacing: 0.2rem;
+		border: 3rem solid $silver;
+	}
+	.c-hero--right {
+		position: static;
+		color: $dark;
+		padding-top: 25vmin;
+		flex: 100%;
+	}
+
+	.c-hero--left {
+		align-items: flex-end;
+		flex: 35%;
+	}
+}
+
+@media screen and (min-width: 425px) {
+	.c-hero {
+		font-size: 1.4rem;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.c-hero {
+		font-size: 1.7rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.c-hero {
+		font-size: 2rem;
+	}
+}
+
+

@@ -1,0 +1,99 @@
+@import 'commonStyles/_colors.scss';
+@import 'commonStyles/_animations.scss';
+
+.c-project {
+	width: 100%;
+	display: grid;
+	align-content: center;
+	grid-template-areas: 
+		"img"
+		"content";
+
+	padding: 1rem;
+	box-shadow: -1px 2px 4px $silver;
+	color: $dark;
+	border: 2px solid transparent;
+	margin: 1.5rem 0;
+
+	&:hover {
+		transform: scale(1.0075) translate(2px, 2px);
+		
+		&.s-has-react-theme {
+			animation: reactBorder .3s linear forwards;
+		}
+
+		&.s-has-css-theme {
+			animation: htmlBorder .3s linear forwards;
+		}
+
+		&.s-has-js-theme{
+			animation: jsBorder .3s linear forwards;
+		}
+	}
+	
+}
+
+
+.c-project_content {
+	grid-area: content;
+	padding: 0 1rem;
+}
+
+.c-project_img {
+	grid-area: img;
+	object-fit: cover;
+	box-shadow: 0 0 3px black;
+}
+
+.c-project_links {
+	margin: 1rem 0;
+
+	&.s-has-demo {
+		display: flex;
+		justify-content: space-between;		
+	}
+}
+
+.c-project_links--demo, .c-project_links--github {
+	text-align: center;
+
+
+	svg {
+		font-size: 1.5rem;
+		opacity: .75;
+		transform: translate(7px, 3px);
+	}
+}
+
+@media screen and (min-width: 700px) {
+
+	.c-project {
+		grid-template-areas: 
+		"content img";
+
+		&.s-is-inverted {
+			grid-template-areas: 
+			"img content";
+		}
+
+		svg {
+			transform: translate(7px, 6px);
+			font-size: 2rem;
+		}
+	}
+
+	.c-project_content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+
+	.c-project_links--github {
+		// margin-left: 2.25rem;
+	}
+
+	.c-project_links {
+		display: block;
+	}
+}

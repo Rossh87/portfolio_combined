@@ -1,0 +1,76 @@
+@import 'commonStyles/_colors.scss';
+
+// These styles will only apply when menu is expanded, i.e.
+// when viewport is wide enough.
+
+@media screen and (min-width: 550px) {
+  // This code adapted from littlesnippets.net
+  // Find the original @
+  // https://www.littlesnippets.net/blog/some-css-menu-inspiration-using-animated-lines
+  // All creative credit is theirs.
+
+.c-nav_menu {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.c-nav_menu * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.c-nav_menu li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0 .5em;
+  padding: 0;
+}
+.c-nav_menu a {
+  padding: 0.2em 0.5em;
+  margin: 0.2em 0;
+  display: block;
+  color: $dark;
+  position: relative;
+  text-decoration: none;
+}
+.c-nav_menu a:before,
+.c-nav_menu a:after {
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+.c-nav_menu a:before {
+  left: 0;
+  top: 0;
+  border-left: 3px solid $accent;
+  border-top: 3px solid $accent;
+  -webkit-transform: translate(100%, 50%);
+  transform: translate(100%, 50%);
+}
+.c-nav_menu a:after {
+  right: 0;
+  bottom: 0;
+  border-right: 3px solid $accent;
+  border-bottom: 3px solid $accent;
+  -webkit-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+// .c-nav_menu a:hover,
+// .c-nav_menu .current a {
+//   color: $highlight;
+// }
+.c-nav_menu a:hover:before,
+.c-nav_menu .current a:before,
+.c-nav_menu a:hover:after,
+.c-nav_menu .current a:after {
+  -webkit-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
+  opacity: 1;
+}
+
+}

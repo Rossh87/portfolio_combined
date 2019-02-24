@@ -1,0 +1,8 @@
+@import 'commonStyles/_colors.scss';
+
+.c-button {
+	padding: .5rem;
+	background-color: transparent;
+	border: 2px solid $silver;
+	cursor: pointer;
+}

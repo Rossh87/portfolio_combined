@@ -1,0 +1,70 @@
+@import 'commonStyles/_colors.scss';
+@import 'commonStyles/_animations.scss';
+
+.c-skillCard {
+	box-shadow: -1px 2px 4px $silver;
+	margin: 1.5rem 0;
+	font-size: 1.2rem;
+	padding: 1rem;
+	display: grid;
+	border: 2px solid transparent;
+	color: $dark;
+	display: grid;
+	grid: "skillCard_graphic" 1fr "skillCard_text" 1fr;
+
+	&:hover {
+		transform: scale(1.0075) translate(2px, 2px);
+	}
+
+	&.s-has-react-theme {
+		animation: reactBorder .3s linear forwards;
+		color: darken($react-blue, 10%);
+	}
+
+	&.s-has-css-theme {
+		animation: htmlBorder .3s linear forwards;
+		color: $highlight-trans;
+	}
+
+	&.s-has-js-theme{
+		animation: jsBorder .3s linear forwards;
+		color: $js-red;
+	}
+}
+
+.c-skillCard_graphic {
+	grid-area: skillCard_graphic;
+}
+
+.c-skillCard_text {
+	grid-area: skillCard_text;
+	text-align: center;
+	align-self: center;
+}
+
+.c-skillCard_content {
+	padding: 1rem;
+}
+
+.c-skillCard_button {
+	font-size: 1.1rem;
+	cursor: pointer;
+}
+
+@media screen and (min-width: 495px) {
+	.c-skillCard {
+		grid: auto / repeat(2, 1fr);
+		grid-template-areas: "skillCard_graphic skillCard_text";
+
+		&.s-is-inverted{
+			grid-template-areas: "skillCard_text skillCard_graphic";
+		}
+	}
+}
+
+
+
+// Animation definitions below
+
+
+

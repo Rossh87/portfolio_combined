@@ -1,0 +1,24 @@
+@import 'commonStyles/_colors.scss';
+
+.c-divider {
+	text-align: center;
+	box-shadow: 0px -10px 50px 5px lighten($white, 10%);
+	position: relative;
+	margin-bottom: 2rem;
+}
+
+.c-divider_text {
+	color: $dark;
+	background-color: transparent;
+	font-size: 1.5rem;
+	font-weight: bold;
+	transform: translateY(50%);
+	display: inline-block;
+}
+
+.c-divider_hr {
+	border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), $silver, rgba(0, 0, 0, 0));
+    margin: 0;
+}

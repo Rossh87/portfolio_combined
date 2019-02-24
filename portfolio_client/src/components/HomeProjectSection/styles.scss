@@ -1,0 +1,15 @@
+@import 'commonStyles/_colors.scss';
+
+.c-homeProject {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.c-homeProject_graphic {
+	justify-self: center;
+	background-color: $silver;
+	width: 90%;
+	height: 10vh;
+	border-radius: 50%;
+	box-shadow: 20px $silver;
+}

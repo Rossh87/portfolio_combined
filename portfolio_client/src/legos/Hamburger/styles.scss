@@ -1,0 +1,55 @@
+@import 'commonStyles/_colors.scss';
+
+.c-hamburger {
+	position: absolute;
+	top: .5rem;
+	z-index: 10;
+	cursor: pointer;
+}
+
+%hamburger-shared {
+	display: block;
+	content: '';
+	width: 2rem;
+	height: 3px;
+	background-color: $dark;
+	transition: all 250ms linear;
+}
+
+.c-hamburger_icon {
+	margin: 1em;
+
+
+	@extend %hamburger-shared;
+
+	&.s-is-open {
+		transform: rotate(45deg);
+
+		&::before {
+			opacity: 0;
+		}
+
+		&::after {
+			transform: rotate(-90deg) translateX(3px);
+		}
+	}
+
+	&::before {
+		@extend %hamburger-shared;
+
+		transform: translateY(-6px);
+	}
+
+	&::after {
+		@extend %hamburger-shared;
+
+		transform: translateY(3px); 
+	}
+}
+
+@media screen and (min-width: 550px) {
+	.c-hamburger{
+		display: none;
+	}
+}
+

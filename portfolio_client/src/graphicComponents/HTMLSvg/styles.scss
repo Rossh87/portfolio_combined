@@ -1,0 +1,45 @@
+@import 'commonStyles/_colors.scss';
+
+.c-htmlGraphic {
+	width: 100%;
+	height: 100%;
+
+	&.s-is-hovered {
+
+		.c-htmlGraphic_bracket--left {
+			transform: translateX(25px);
+		}
+
+		.c-htmlGraphic_bracket--right {
+			transform: translateX(0);
+		}
+
+		.c-htmlGraphic_slash {
+			animation: slash .1s linear forwards;
+		}
+	}
+}
+
+.c-htmlGraphic_bracket--left {
+	transform: translateX(50px);
+	fill: transparent;
+	transition: .1s transform linear;
+}
+
+.c-htmlGraphic_bracket--right {
+	transform: translateX(-50px);
+	fill: transparent;
+	transition: .1s transform linear;
+}
+
+@keyframes slash {
+	to {
+		stroke-dashoffset: 75;
+		stroke: $highlight;
+	}
+}
+
+.c-htmlGraphic_slash {
+	stroke-dasharray: 200;
+	stroke-dashoffset: 200;
+}

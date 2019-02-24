@@ -1,0 +1,90 @@
+@import 'commonStyles/_colors.scss';
+
+// Define vars for use in hover effect
+$map: (
+	1: $dark,
+	2: $silver,
+	3: $white
+);
+
+$hover-map: (
+	1: 1,
+	2: 0.5,
+	3: 0.25
+);
+
+.c-about {
+	height: 50vh;
+	min-height: 400px;
+	position: relative;
+	overflow: hidden;
+
+	&.s-is-hovered {
+
+		.c-about_splash {
+			transform: scale(5);
+			opacity: 1;
+		}
+
+		@each $key, $opacity in $hover-map {
+			.c-about_splash--stop#{$key} {
+				stop-color: $accent;
+				stop-opacity: $opacity;
+			}
+		} 
+	}
+}
+
+.c-about_text {
+	width: 100%;
+	z-index: 5;
+	position: absolute;
+	top: 20%;
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+.c-about_splash {
+	width: 15%;
+	height: 15%;
+	opacity: .5;
+	position: absolute;
+	left: 42.5%;
+	top: 42.5%;
+	transition: .5s ease transform;
+}
+
+// Make text container narrower and increase size of
+// color splash when hovered.
+@media screen and (min-width: 875px) {
+	.c-about_text {
+		width: 75%;
+		left: 12.5%;
+	}
+	.c-about {
+
+		&.s-is-hovered {
+
+			.c-about_splash {
+				transform: scale(8);
+			}
+			
+		}
+	}
+}
+
+// Reduce height of container @ larger screen sizes
+// to minimize whitespace under text.
+@media screen and (min-width: 700px) {
+	.c-about {
+		height: 30vh;
+	}
+}
+
+@each $key, $color in $map {
+	.c-about_splash--stop#{$key} {
+		stop-color: $color;
+	}
+}
+
+
